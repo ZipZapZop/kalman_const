@@ -4,8 +4,6 @@ import itertools
 
 def print_graph():
     with open('kalman_data.csv','r') as d:
-        # reader = csv.reader(d)
-        # data = list(reader)
         lines = [line.rstrip('\n') for line in open('kalman_data.csv')]
         lines = list(map(float, lines))
             
