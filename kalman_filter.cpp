@@ -4,15 +4,14 @@
 
 std::vector<double> kalman_filter(double q, double r, double true_val, int num_of_trials);
 
-// constant to estimate == 1.52
 int main()
 {
-    std::vector<double> data = kalman_filter(0.001, 0.01, 1.52, 100);
+    std::vector<double> data = kalman_filter(0.00001, 0.01, 1.52, 50);
     std::ofstream data_out;
     data_out.open("kalman_data.csv");
     for(int i = 0; i < data.size(); i++)
-    //     std::cout << list[i] << '\n';
         data_out << data[i] << '\n';
+        
     data_out.close();
 }
 
@@ -21,9 +20,8 @@ std::vector<double> kalman_filter(double q, double r, double true_val, int num_o
     // Q, R, and sensor measurements
     kalman_data data = kalman_data(q, r, true_val, num_of_trials);
     double K;   // gain
-
-    double x_prev = data.x_init;
-    double P_prev = data.P_init;
+    double x_prev = 0;  // initial state
+    double P_prev = 0.5;    // initial error estimate
     std::vector<double> predicted_data = std::vector<double>();
     for(int i = 0; i < data.num_of_trials; i++) 
     {
@@ -37,7 +35,6 @@ std::vector<double> kalman_filter(double q, double r, double true_val, int num_o
         double P_aposteriori = (1 - K)*P_apriori;
 
         predicted_data.push_back(x_aposteriori);
-        // std::cout << x_aposteriori << '\n';
         x_prev = x_aposteriori;
         P_prev = P_aposteriori;
     }
