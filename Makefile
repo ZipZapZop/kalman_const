@@ -8,6 +8,6 @@ kalman_filter:	generate_z_vals.o kalman_data.o kalman_filter.o
 	g++ -c $<
 
 clean:
-	-rm generate_z_vals.o kalman_data.o kalman_filter
+	-rm generate_z_vals.o kalman_data.o kalman_filter kalman_data.csv
 
 all:	kalman_filter
