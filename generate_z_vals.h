@@ -5,4 +5,4 @@
 #include <cmath>
 #include <vector>
 
-std::vector<double> list_of_z(double variance, int num_of_z);
+std::vector<double> list_of_z(double variance, double true_val, int num_of_z);
