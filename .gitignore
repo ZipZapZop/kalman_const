@@ -1,2 +1,5 @@
 a.out
 .vscode/settings.json
+generate_z_vals.o
+kalman_data.o
+kalman_filter.o
