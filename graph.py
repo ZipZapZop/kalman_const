@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import csv
-import itertools
+# import itertools
 
 def print_graph():
     with open('kalman_data.csv','r') as d:
