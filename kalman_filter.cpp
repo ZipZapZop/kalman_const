@@ -6,7 +6,7 @@ std::vector<double> kalman_filter(double q, double r, double true_val, int num_o
 
 int main()
 {
-    std::vector<double> data = kalman_filter(0.00001, 0.01, 1.52, 50);
+    std::vector<double> data = kalman_filter(0.00001, 0.1, 1.52, 50);
     std::ofstream data_out;
     data_out.open("kalman_data.csv");
     for(int i = 0; i < data.size(); i++)

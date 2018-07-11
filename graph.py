@@ -11,7 +11,7 @@ def print_graph():
             
     plt.figure()
     plt.plot(lines,'k-',label='Kalman filter outputs')
-    plt.axhline(1.52,color = 'r', label='true value')
+    plt.axhline(1.52, color = 'r', label='true value')
     plt.legend()
     plt.title('Kalman filter vs the true value (x = 1.52)')
     plt.show()
